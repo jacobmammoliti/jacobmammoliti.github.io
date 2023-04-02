@@ -1,0 +1,26 @@
+baseURL = "https://coldbrewlabs.ca"
+languageCode = "en-us"
+title = "Jacob Mammoliti"
+theme = "cactus"
+copyright = "Jacob Mammoliti"
+googleAnalytics = "G-77N7X1MF11"
+
+[params]
+  colortheme = "white"
+  description = "I am based out of Toronto, Canada and I work on all things Cloud. I tend to spend most of my time working with Google Cloud Platform, Kubernetes, and infrastructure automation. \n\nOutside of technology, I am a Toronto sports fanatic and streetwear connoisseur.\n\n[Icon created by RIkas Dzihab](https://www.flaticon.com/authors/rikas-dzihab)"
+  showAllPostsOnHomePage = false
+  postsOnHomePage = 5
+  css = ["css/custom.css"]
+
+[[params.social]]
+  name = "github"
+  link = "https://github.com/jacobmammoliti"
+
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/jacobmammoliti/"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1

@@ -4,7 +4,7 @@ date: 2023-04-02T09:16:01-05:00
 draft: false
 ---
 
-Ever since GitHub announced Actions in 2018, it has been by go-to CI tool for personal projects. I will say, I have been tempted at times to switch to other tools, such as Argo Workflows, but with GitHub Actions, there is native support within my GitHub repositories and I don't have to host anything.
+Ever since GitHub announced Actions in 2018, it has been my go-to CI tool for personal projects. I will say, I have been tempted at times to switch to other tools, such as Argo Workflows, but with GitHub Actions, there is native support within my GitHub repositories and I don't have to host anything.
 
 One switch I recently have made is to Google Artifact Registry from DockerHub to host my container images. With the combination of GitHub Actions, Artifact Registry, and Workload Identity Federation, I am able to push my images into a private registry without having to generate and store any long lived credentials.
 

@@ -1,7 +1,7 @@
 ---
 title: "Comparing External Secrets Operator With HashiCorp Vault Secrets Operator"
 date: 2023-05-01T14:25:42-04:00
-draft: true
+draft: false
 ---
 ## Introduction
 

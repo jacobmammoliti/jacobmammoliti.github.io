@@ -5,11 +5,11 @@ draft: false
 ---
 ## Introduction
 
-HashiCorp recently released their own Kubernetes Operator to retrieve secrets from Vault. This is a similar tool to the existing External Secrets Operator (ESO) initially started by GoDaddy a few years ago.
+HashiCorp recently released their own Kubernetes Operator to retrieve secrets from Vault. This is a similar to the GoDaddy tool, External Secrets Operator (ESO), started a few years ago.
 
 The Vault Secrets Operator (VSO) is the third method to consume secrets from Vault to Kubernetes workloads that HashiCorp officially supports. The other two options are their Kubernetes Vault Agent and their Container Storage Interface (CSI) provider.
 
-I did not want to write a blog comparing all of the options because I have seen a couple blogs doing just that. Instead, this blog is just set to compare VSO and ESO. Additionally, discussing whether syncing secrets from Vault to Kubernetes secrets is a good idea or not, when it makes sense to do so, and things to consider is out of scope for this blog.
+I did not want to write a blog comparing all of the options because I have seen a couple blogs doing just that. Instead, this blog is just set to compare VSO and ESO. Additionally, discussing whether syncing secrets from Vault to Kubernetes secrets is a good idea or not, when it makes sense to do so, and things to consider when doing so is out of scope for this blog.
 
 > **Note:** VSO is still in its beta phase, so I expect consistent updates until a stable release. Given that, I’ll do my best to keep this post updated but if you see something that is severely out of date, feel free to reach out.
 
@@ -75,7 +75,7 @@ The documentation for the metrics is great and can be found [here](https://exter
 
 ### Conclusion
 
-While both operators provide the necessary metrics I need, I think right now, ESO is winner because of the overall documentation behind the metrics. I’m sure HashiCorp will improve this shortly, but for now, ESO wins in this category.
+While both operators provide the necessary metrics I need, I think right now, ESO is the winner because of the overall documentation behind the metrics. I’m sure HashiCorp will improve this shortly, but for now, ESO wins in this category.
 
 ## Final Remarks
 

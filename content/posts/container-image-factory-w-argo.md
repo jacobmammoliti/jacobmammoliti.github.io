@@ -1,7 +1,7 @@
 ---
 title: "Building a Container Image Factory with Argo and Azure Workload Identity"
 date: 2023-08-10T13:37:00-04:00
-draft: true
+draft: false
 ---
 
 ## Introduction

@@ -24,3 +24,8 @@ googleAnalytics = "G-77N7X1MF11"
 name = "Home"
 url = "/"
 weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2

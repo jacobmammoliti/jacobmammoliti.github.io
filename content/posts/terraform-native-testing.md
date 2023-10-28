@@ -40,9 +40,9 @@ student_list_scrubbed = [
 
 With that bit of context of the module, let’s move onto the testing.
 
-## Testing a Terraform Module with Terragrunt
+## Testing a Terraform Module with Terratest
 
-Being that Terratest is a Go library, the tests written are also in Go. While writing these tests are not overly complex, it helps to have some familiarity with setting up Go environments, a grasp of the language's syntax, and reviewing the examples offered by Terragrunt.
+Being that Terratest is a Go library, the tests written are also in Go. While writing these tests are not overly complex, it helps to have some familiarity with setting up Go environments, a grasp of the language's syntax, and reviewing the examples offered by Gruntwork.
 
 As this module is straightforward, the test for it is equally simple. The goal is to verify that the module indeed returns three lists and that the contained strings match our expected values.
 
@@ -125,7 +125,7 @@ Now to test with Terraform natively. These tests are written in HashiCorp Config
 
 **Note:** The testing capabilities shown here are quite limited since the test is fairly simple. I’d recommend reading the documentation [here](https://developer.hashicorp.com/terraform/language/tests) to see the full list of capabilities available today.
 
-I was able to replicate the same test I’m using in Terragrunt with the following code:
+I was able to replicate the same test I’m using in Terratest with the following code:
 
 ```go
 variables {
@@ -197,6 +197,6 @@ The outputs for both successful and unsuccessful tests are concise and exactly w
 
 Overall, I'm really enjoying the native testing framework integrated into Terraform now. Writing the test code felt intuitive and didn't require extensive research or comprehension. Now mind you, I’m just doing a simple test here and I'm eager to delve deeper into its capabilities and explore its compatibility with more complex modules in our environment.
 
-Regarding the choice of which path to take, I recommend assessing your current testing setup and consider whether it makes sense to migrate to the native testing framework. As I mentioned earlier, I'm a fan of Terragrunt because of its support for testing not just Terraform code but also Dockerfiles, Kubernetes manifests, and more. If the versatility of a single testing tool for these artifacts is a priority for you, there may not be an immediate need to rush into switching to the native framework. It's crucial to weigh the learning curve and the time required to rewrite your existing tests.
+Regarding the choice of which path to take, I recommend assessing your current testing setup and consider whether it makes sense to migrate to the native testing framework. As I mentioned earlier, I'm a fan of Terratest because of its support for testing not just Terraform code but also Dockerfiles, Kubernetes manifests, and more. If the versatility of a single testing tool for these artifacts is a priority for you, there may not be an immediate need to rush into switching to the native framework. It's crucial to weigh the learning curve and the time required to rewrite your existing tests.
 
 That being said, if having a testing framework from the vendor is something you have been waiting for, then I suggest starting small with a single piece of Terraform code or a module that you currently test, and writing it in HCL. This will help you gauge its capabilities and potential limitations. If it fulfills all your requirements, then it's worth developing a plan and initiating the migration of your Terraform tests to the native framework.

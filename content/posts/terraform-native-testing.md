@@ -78,7 +78,7 @@ func TestStudentInstructorList(t *testing.T) {
   student_list_scrubbed := terraform.OutputList(t, terraformOptions, "student_list_scrubbed")
 
   // Assertions on the three returned lists
-  assert.Equal(t, []string{"test_instructor@acceleratorlabs.ca"}, instructor_list)
+  assert.Equal(t, []string{"test_instructor@pwc.com"}, instructor_list)
   assert.Equal(t, []string{"test_student@pwc.com"}, student_list)
   assert.Equal(t, []string{"tesent"}, student_list_scrubbed)
 }

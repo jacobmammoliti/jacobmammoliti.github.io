@@ -1,7 +1,7 @@
 ---
 title: "Querying BigQuery Data with Natural Language with Gemini and LangChain"
 date: 2024-09-24T20:33:52-04:00
-draft: true
+draft: false
 ---
 
 ## Introduction

@@ -10,7 +10,7 @@ In a previous blog, I developed a Python application that leveraged OpenAI’s G
 
 The Slack application I developed now runs in Cloud Run and leverages Gemini to generate potentially complex SQL queries from English questions that are provided by the user.
 
-In this blog, I’ll walk through the solution. If you’re interested in seeing all the code behind the project, the GitHub repository is available [here](https://github.com/jacobmammoliti/blog-artifacts/llm-gemini-bigquery).
+In this blog, I’ll walk through the solution. If you’re interested in seeing all the code behind the project, the GitHub repository is available [here](https://github.com/jacobmammoliti/blog-artifacts/tree/main/llm-gemini-bigquery).
 
 ## Motivation
 

@@ -1,5 +1,5 @@
 ---
-title: "How I Build Automated Data Scraping Pipelines in Google Cloud"
+title: "How I Build Automated Web Scraping Pipelines in Google Cloud"
 date: 2024-12-10T14:59:05-05:00
 draft: false
 ---

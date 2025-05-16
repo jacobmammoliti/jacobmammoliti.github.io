@@ -1,7 +1,7 @@
 ---
 title: "Building a Python Based MCP Server for Kubernetes"
 date: 2025-05-16T11:35:14-04:00
-draft: true
+draft: false
 ---
 
 It feels like you can’t go far on the internet these days without running into a post or blog about Generative AI or Agentic AI. And for good reason—there are a lot of fascinating use cases and projects built around these concepts, all aiming, in one way or another, to automate mundane tasks and help us understand and solve complex problems.

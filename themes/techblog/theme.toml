@@ -1,0 +1,12 @@
+name = "TechBlog"
+license = "MIT"
+licenselink = "https://github.com/yourname/techblog/blob/main/LICENSE"
+description = "A minimal tech blog theme with Mac terminal-style code blocks"
+homepage = "https://github.com/yourname/techblog"
+tags = ["blog", "minimal", "tech", "clean"]
+features = ["responsive", "syntax-highlighting", "minimal"]
+min_version = "0.110.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://yoursite.com"

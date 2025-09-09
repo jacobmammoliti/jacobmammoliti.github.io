@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {{- if .IsHome }}
+            {{ .Site.Title }}
+        {{- else }}
+            {{ .Title }} - {{ .Site.Title }}
+        {{- end }}
+    </title>
+    
+    {{- if .Description }}
+    <meta name="description" content="{{ .Description }}">
+    {{- else if .Summary }}
+    <meta name="description" content="{{ .Summary }}">
+    {{- else if .Site.Params.description }}
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{- end }}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+    
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    
+    {{- if hugo.IsProduction }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    {{- end }}
+</head>
+<body>
+    {{ partial "header.html" . }}
+    
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+    
+    <script src="{{ "js/lightbox.js" | relURL }}"></script>
+</body>
+</html>

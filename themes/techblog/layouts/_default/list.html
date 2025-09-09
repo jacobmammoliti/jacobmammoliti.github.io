@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section class="home-content">
+    {{- if .Content }}
+    <div class="home-intro">
+        {{ .Content }}
+    </div>
+    {{- end }}
+    
+    <h2>Writings</h2>
+    
+    {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections | first 10 }}
+    {{- if not $pages }}
+        {{- $pages = site.RegularPages | first 10 }}
+    {{- end }}
+    
+    {{- if $pages }}
+    <div class="post-grid">
+        {{- range $pages }}
+        <article class="post-card-preview">
+            <div class="post-preview-content">
+                <h3 class="post-preview-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+                
+                <div class="post-preview-meta">
+                    <div class="post-details">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format "Jan 02, 2006" }}
+                        </time>
+                        {{- if .ReadingTime }}
+                        <span class="reading-time">{{ .ReadingTime }} min read</span>
+                        {{- end }}
+                    </div>
+                </div>
+                
+                {{- if .Params.tags }}
+                <div class="post-preview-tags">
+                    {{- range .Params.tags }}
+                    <span class="tag">{{ . }}</span>
+                    {{- end }}
+                </div>
+                {{- end }}
+                
+                {{- if .Summary }}
+                <div class="post-preview-summary">
+                    {{ .Summary }}
+                </div>
+                {{- end }}
+            </div>
+        </article>
+        {{- end }}
+    </div>
+    {{- else }}
+    <p>No posts yet. Start writing!</p>
+    {{- end }}
+</section>
+{{ end }}

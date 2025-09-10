@@ -27,11 +27,24 @@
     
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     
-    {{- if hugo.IsProduction }}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    {{- end }}
+        {{- if hugo.IsProduction }}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        {{- end }}
+
+        <!-- Google Analytics -->
+        {{- with .Site.Params.googleAnalytics }}
+        {{- if . }}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ . }}');
+        </script>
+        {{- end }}
+        {{- end }}
 </head>
 <body>
     {{ partial "header.html" . }}

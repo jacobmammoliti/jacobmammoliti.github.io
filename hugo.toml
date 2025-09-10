@@ -17,6 +17,7 @@ theme = 'techblog'
   description = 'Technologist based in Toronto, Canada focused on Cloud and Container Security.'
   showAbout = false
   footerText = ''
+  googleAnalytics = 'G-77N7X1MF11' # Set your GA4 Measurement ID here, e.g., G-XXXXXXXXXX
   
   # Social media links
   [params.social]

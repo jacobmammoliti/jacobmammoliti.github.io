@@ -239,29 +239,6 @@ a:hover {
     margin-bottom: 1.25rem;
 }
 
-/* Legacy article styles for compatibility */
-.article {
-    margin-bottom: 3rem;
-}
-
-.article-header {
-    margin-bottom: 2rem;
-}
-
-.article-title {
-    margin-bottom: 0.5rem;
-}
-
-.article-meta {
-    color: #7f8c8d;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.article-content {
-    line-height: 1.8;
-}
-
 /* Images */
 img {
     max-width: 100%;
@@ -366,7 +343,7 @@ li {
 /* Blockquotes */
 blockquote {
     border-left: 4px solid #3498db;
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1rem;
     margin: 1.5rem 0;
     font-style: italic;
     color: #666;
@@ -374,39 +351,18 @@ blockquote {
     border-radius: 0 5px 5px 0;
 }
 
-/* Mac Terminal-style Code Blocks */
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Code Blocks */
 pre {
-    background-color: #1e1e1e;
-    border-radius: 10px;
+    background-color: #f6f8fa;
+    border-radius: 6px;
     padding: 0;
     margin: 1.5rem 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    position: relative;
+    border: 1px solid #d0d7de;
     overflow: hidden;
-}
-
-/* Mac window chrome */
-pre::before {
-    content: "";
-    display: block;
-    height: 30px;
-    background: linear-gradient(135deg, #434343 0%, #2d2d2d 100%);
-    border-radius: 10px 10px 0 0;
-    position: relative;
-}
-
-pre::after {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 15px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ff5f56;
-    box-shadow: 
-        18px 0 0 #ffbd2e,
-        36px 0 0 #27ca3f;
 }
 
 code {
@@ -420,37 +376,175 @@ code {
 
 pre code {
     display: block;
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
     background: none;
-    color: #f8f8f2;
+    color: #24292f;
     overflow-x: auto;
     border-radius: 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Syntax highlighting colors (similar to Mac terminal) */
-.highlight .c { color: #75715e; } /* Comment */
-.highlight .k { color: #66d9ef; } /* Keyword */
-.highlight .s { color: #a6e22e; } /* String */
-.highlight .nv { color: #f92672; } /* Variable */
-.highlight .nb { color: #ae81ff; } /* Built-in */
-.highlight .nc { color: #a6e22e; } /* Class */
-.highlight .nf { color: #a6e22e; } /* Function */
-.highlight .nn { color: #f8f8f2; } /* Namespace */
-.highlight .nt { color: #f92672; } /* Tag */
-.highlight .na { color: #a6e22e; } /* Attribute */
-.highlight .no { color: #66d9ef; } /* Constant */
-.highlight .mi { color: #ae81ff; } /* Number */
-.highlight .mf { color: #ae81ff; } /* Float */
+/* Language badge */
+pre code[data-lang]::before {
+    content: attr(data-lang);
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 0.75rem;
+    color: #6e7781;
+}
 
-/* Inline code in pre blocks */
-pre code .hljs-comment { color: #75715e; }
-pre code .hljs-keyword { color: #66d9ef; }
-pre code .hljs-string { color: #a6e22e; }
-pre code .hljs-variable { color: #f92672; }
-pre code .hljs-built_in { color: #ae81ff; }
-pre code .hljs-title { color: #a6e22e; }
-pre code .hljs-number { color: #ae81ff; }
+pre code[data-lang="bash"]::before       { color: #116329; }
+pre code[data-lang="sh"]::before         { color: #116329; }
+pre code[data-lang="zsh"]::before        { color: #116329; }
+pre code[data-lang="Docker"]::before     { color: #0550ae; }
+pre code[data-lang="dockerfile"]::before { color: #0550ae; }
+pre code[data-lang="yaml"]::before       { color: #8250df; }
+pre code[data-lang="yml"]::before        { color: #8250df; }
+pre code[data-lang="go"]::before         { color: #00acd7; }
+pre code[data-lang="python"]::before     { color: #3572a5; }
+pre code[data-lang="javascript"]::before { color: #953800; }
+pre code[data-lang="typescript"]::before { color: #0550ae; }
+pre code[data-lang="json"]::before       { color: #116329; }
+pre code[data-lang="hcl"]::before        { color: #8250df; }
+pre code[data-lang="terraform"]::before  { color: #8250df; }
+pre code[data-lang="toml"]::before       { color: #953800; }
+pre code[data-lang="sql"]::before        { color: #cf222e; }
+
+/* Syntax highlighting — GitHub light palette */
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs  { color: #6e7781; font-style: italic; } /* Comment */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kr,
+.highlight .kt  { color: #cf222e; }                     /* Keyword */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx  { color: #0a3069; }                     /* String */
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi  { color: #953800; }                     /* Variable */
+.highlight .nb  { color: #8250df; }                     /* Built-in */
+.highlight .nc  { color: #8250df; }                     /* Class */
+.highlight .nf,
+.highlight .fm  { color: #8250df; }                     /* Function */
+.highlight .nn  { color: #24292f; }                     /* Namespace */
+.highlight .nt  { color: #116329; }                     /* Tag */
+.highlight .na  { color: #0550ae; }                     /* Attribute */
+.highlight .no  { color: #0550ae; }                     /* Constant */
+.highlight .mi,
+.highlight .mf,
+.highlight .mh,
+.highlight .mo  { color: #0550ae; }                     /* Number */
+.highlight .o,
+.highlight .ow  { color: #cf222e; }                     /* Operator */
+.highlight .p   { color: #24292f; }                     /* Punctuation */
+.highlight .err { color: #cf222e; }                     /* Error */
+
+/* highlight.js light palette (production) */
+pre code .hljs-comment    { color: #6e7781; font-style: italic; }
+pre code .hljs-keyword     { color: #cf222e; }
+pre code .hljs-string      { color: #0a3069; }
+pre code .hljs-variable    { color: #953800; }
+pre code .hljs-built_in    { color: #8250df; }
+pre code .hljs-title       { color: #8250df; }
+pre code .hljs-number      { color: #0550ae; }
+pre code .hljs-attr        { color: #0550ae; }
+pre code .hljs-literal     { color: #0550ae; }
+pre code .hljs-tag         { color: #116329; }
+pre code .hljs-name        { color: #cf222e; }
+
+/* Per-language color scheme overrides */
+
+/* bash/sh/zsh — minimal, it's usually terminal output not scripts.
+   Reset keywords/operators/builtins to plain text to avoid false positives. */
+code[data-lang="bash"] .k,
+code[data-lang="bash"] .kd,
+code[data-lang="bash"] .kn,
+code[data-lang="bash"] .kr,
+code[data-lang="bash"] .kt,
+code[data-lang="bash"] .o,
+code[data-lang="bash"] .ow,
+code[data-lang="bash"] .nb,
+code[data-lang="sh"]   .k,
+code[data-lang="sh"]   .o,
+code[data-lang="sh"]   .nb,
+code[data-lang="zsh"]  .k,
+code[data-lang="zsh"]  .o,
+code[data-lang="zsh"]  .nb   { color: #24292f; }          /* plain text */
+code[data-lang="bash"] .c,
+code[data-lang="bash"] .c1,
+code[data-lang="sh"]   .c,
+code[data-lang="sh"]   .c1   { color: #6e7781; font-style: italic; }
+code[data-lang="bash"] .nv,
+code[data-lang="bash"] .vi,
+code[data-lang="sh"]   .nv   { color: #953800; }          /* $VARIABLES stay orange */
+code[data-lang="bash"] .s,
+code[data-lang="bash"] .s1,
+code[data-lang="bash"] .s2,
+code[data-lang="sh"]   .s,
+code[data-lang="sh"]   .s1,
+code[data-lang="sh"]   .s2   { color: #0a3069; }          /* strings stay dark blue */
+
+/* Dockerfile — instructions bold blue, strings dark blue, variables orange */
+code[data-lang="Docker"]     .k,
+code[data-lang="dockerfile"] .k     { color: #0550ae; font-weight: 600; }
+code[data-lang="Docker"]     .s,
+code[data-lang="Docker"]     .s1,
+code[data-lang="Docker"]     .s2,
+code[data-lang="dockerfile"] .s,
+code[data-lang="dockerfile"] .s2    { color: #0a3069; }
+code[data-lang="Docker"]     .nv,
+code[data-lang="dockerfile"] .nv    { color: #953800; }
+code[data-lang="Docker"]     .c,
+code[data-lang="dockerfile"] .c     { color: #6e7781; font-style: italic; }
+
+/* YAML — keys purple, strings teal, booleans/numbers blue */
+code[data-lang="yaml"] .nt,
+code[data-lang="yml"]  .nt          { color: #8250df; }   /* key */
+code[data-lang="yaml"] .s,
+code[data-lang="yaml"] .s1,
+code[data-lang="yaml"] .s2,
+code[data-lang="yml"]  .s,
+code[data-lang="yml"]  .s2          { color: #116329; }   /* string value */
+code[data-lang="yaml"] .l,
+code[data-lang="yml"]  .l,
+code[data-lang="yaml"] .mi,
+code[data-lang="yml"]  .mi          { color: #0550ae; }   /* bool/number */
+
+/* Go — keywords red, types purple, strings dark blue */
+code[data-lang="go"] .k,
+code[data-lang="go"] .kd            { color: #cf222e; }
+code[data-lang="go"] .kt,
+code[data-lang="go"] .nc            { color: #8250df; }
+code[data-lang="go"] .s,
+code[data-lang="go"] .s2            { color: #0a3069; }
+code[data-lang="go"] .c,
+code[data-lang="go"] .c1            { color: #6e7781; font-style: italic; }
+
+/* Python — keywords red, builtins purple, strings dark blue, decorators orange */
+code[data-lang="python"] .k,
+code[data-lang="python"] .kd        { color: #cf222e; }
+code[data-lang="python"] .nb        { color: #8250df; }
+code[data-lang="python"] .s,
+code[data-lang="python"] .s1,
+code[data-lang="python"] .s2        { color: #0a3069; }
+code[data-lang="python"] .nd        { color: #953800; }   /* decorator */
+code[data-lang="python"] .c,
+code[data-lang="python"] .c1        { color: #6e7781; font-style: italic; }
 
 /* Post Grid and Preview Styles */
 .post-grid {
@@ -467,11 +561,6 @@ pre code .hljs-number { color: #ae81ff; }
     overflow: hidden;
     border: none;
     transition: none;
-}
-
-.post-card-preview:hover {
-    transform: none;
-    box-shadow: none;
 }
 
 .post-preview-content {
@@ -525,45 +614,8 @@ pre code .hljs-number { color: #ae81ff; }
     font-size: 0.9rem;
 }
 
-/* Post list */
-.post-list {
-    list-style: none;
-    margin-left: 0;
-}
-
-.post-list-item {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
-}
-
-.post-list-item:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.post-list-title {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.post-list-meta {
-    color: #7f8c8d;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.post-list-summary {
-    color: #666;
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-    
     .header-content {
         flex-direction: column;
         align-items: flex-start;
@@ -596,21 +648,11 @@ pre code .hljs-number { color: #ae81ff; }
         font-size: 0.8rem;
         padding: 1rem;
     }
-    
-    .post-card {
-        margin: 0;
-        border-radius: 0;
-        border: none;
-    }
-    
-    .post-content {
-        padding: 0;
-    }
-    
+
     body {
         padding: 20px;
     }
-    
+
     .post-title {
         font-size: 2rem;
     }

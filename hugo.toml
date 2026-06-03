@@ -1,5 +1,5 @@
 baseURL = 'https://coldbrewlabs.ca/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Jacob Mammoliti'
 theme = 'techblog'
 
